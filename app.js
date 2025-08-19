@@ -13,10 +13,17 @@ gsap.to('header', { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out', delay: 
 gsap.from('h1, section p.inline-flex', { opacity: 0, y: 14, duration: 0.7, stagger: 0.05, ease: 'power2.out' });
 
 // Feature cards reveal
-gsap.utils.toArray('.feature-row').forEach((row, i) => {
-  gsap.from(row.querySelectorAll('.feature-card'), {
-    scrollTrigger: { trigger: row, start: 'top 80%' },
-    opacity: 0, y: 22, duration: 0.6, ease: 'power2.out', stagger: 0.08
+gsap.utils.toArray('#highlights .feature-card').forEach((card, i) => {
+  gsap.from(card, {
+    scrollTrigger: { trigger: card, start: 'top 85%' },
+    opacity: 0, y: 20, duration: 0.45, ease: 'power2.out'
+  });
+});
+
+gsap.utils.toArray('.screen-card').forEach((card, i) => {
+  gsap.from(card, {
+    scrollTrigger: { trigger: card, start: 'top 85%' },
+    opacity: 0, y: 18, duration: 0.5, ease: 'power2.out'
   });
 });
 

@@ -91,10 +91,11 @@
           <div class="relative">
             <div class="mockup tilt group mx-auto w-[60%] sm:w-[54%] lg:w-[300px]" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.2">
               <div class="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur p-2">
-                <picture>
-                  <source srcset="./assets/screen-matches.jpg" type="image/jpeg" />
-                  <img src="./assets/screen-matches.svg" alt="Capture des matchs" class="rounded-2xl border border-white/10 shadow-2xl" loading="eager" />
-                </picture>
+                <div id="carousel-matches" class="relative">
+                  <img src="./assets/screen-matches-1.jpg" alt="Capture des matchs 1" class="carousel-slide rounded-2xl border border-white/10 shadow-2xl active" loading="eager" />
+                  <img src="./assets/screen-matches-2.jpg" alt="Capture des matchs 2" class="carousel-slide rounded-2xl border border-white/10 shadow-2xl" loading="eager" />
+                  <img src="./assets/screen-matches-3.jpg" alt="Capture des matchs 3" class="carousel-slide rounded-2xl border border-white/10 shadow-2xl" loading="eager" />
+                </div>
               </div>
               <div class="pointer-events-none absolute -inset-3 rounded-[34px] opacity-0 group-hover:opacity-100 transition bg-gradient-to-r from-primary/40 to-secondary/40 blur-2xl"></div>
             </div>

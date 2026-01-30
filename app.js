@@ -67,6 +67,23 @@ const closeLb = () => { lightbox.classList.remove('active'); setTimeout(()=> lig
 lightboxClose.addEventListener('click', closeLb);
 lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLb(); });
 
+// Carousel pour les screenshots
+const carouselSlides = document.querySelectorAll('#carousel-matches .carousel-slide');
+let currentSlide = 0;
+
+function nextSlide() {
+  if (carouselSlides.length === 0) return;
+
+  carouselSlides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % carouselSlides.length;
+  carouselSlides[currentSlide].classList.add('active');
+}
+
+// Rotation automatique toutes les 3 secondes
+if (carouselSlides.length > 0) {
+  setInterval(nextSlide, 3000);
+}
+
 // Vanta background
 let vanta;
 window.addEventListener('DOMContentLoaded', () => {

@@ -27,7 +27,7 @@ gsap.utils.toArray('.screen-card').forEach((card, i) => {
   });
 });
 
-// Calculator logic
+// Calculator logic (si les éléments existent)
 const stakeInput = document.getElementById('stake');
 const stakeValue = document.getElementById('stakeValue');
 const oddsInput = document.getElementById('odds');
@@ -35,37 +35,41 @@ const bonusInput = document.getElementById('bonus');
 const bonusValue = document.getElementById('bonusValue');
 const payoutEl = document.getElementById('payout');
 
-const compute = () => {
-  const stake = Number(stakeInput.value);
-  const odds = Math.max(1.01, Number(oddsInput.value || 0));
-  const bonus = Number(bonusInput.value);
-  const base = stake * odds;
-  const total = Math.round((base * (1 + bonus / 100)) * 100) / 100;
-  stakeValue.textContent = stake;
-  bonusValue.textContent = bonus;
-  payoutEl.textContent = total.toString();
-};
-['input', 'change'].forEach(evt => {
-  stakeInput.addEventListener(evt, compute);
-  oddsInput.addEventListener(evt, compute);
-  bonusInput.addEventListener(evt, compute);
-});
-compute();
+if (stakeInput && oddsInput && bonusInput) {
+  const compute = () => {
+    const stake = Number(stakeInput.value);
+    const odds = Math.max(1.01, Number(oddsInput.value || 0));
+    const bonus = Number(bonusInput.value);
+    const base = stake * odds;
+    const total = Math.round((base * (1 + bonus / 100)) * 100) / 100;
+    if (stakeValue) stakeValue.textContent = stake;
+    if (bonusValue) bonusValue.textContent = bonus;
+    if (payoutEl) payoutEl.textContent = total.toString();
+  };
+  ['input', 'change'].forEach(evt => {
+    stakeInput.addEventListener(evt, compute);
+    oddsInput.addEventListener(evt, compute);
+    bonusInput.addEventListener(evt, compute);
+  });
+  compute();
+}
 
-// Lightbox
+// Lightbox (si les éléments existent)
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
-document.querySelectorAll('.shot').forEach(btn => {
-  btn.addEventListener('click', () => {
-    lightboxImg.src = btn.dataset.img;
-    lightbox.classList.remove('hidden');
-    requestAnimationFrame(() => lightbox.classList.add('active'));
+if (lightbox && lightboxImg && lightboxClose) {
+  document.querySelectorAll('.shot').forEach(btn => {
+    btn.addEventListener('click', () => {
+      lightboxImg.src = btn.dataset.img;
+      lightbox.classList.remove('hidden');
+      requestAnimationFrame(() => lightbox.classList.add('active'));
+    });
   });
-});
-const closeLb = () => { lightbox.classList.remove('active'); setTimeout(()=> lightbox.classList.add('hidden'), 200); };
-lightboxClose.addEventListener('click', closeLb);
-lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLb(); });
+  const closeLb = () => { lightbox.classList.remove('active'); setTimeout(()=> lightbox.classList.add('hidden'), 200); };
+  lightboxClose.addEventListener('click', closeLb);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLb(); });
+}
 
 // Vanta background
 let vanta;

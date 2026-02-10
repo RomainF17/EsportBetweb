@@ -59,6 +59,32 @@
     });
   }
 
+  // ─── MOBILE MENU ───
+  var burgerBtn = document.getElementById('burger-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener('click', function () {
+      var isOpen = mobileMenu.classList.contains('open');
+      if (isOpen) {
+        mobileMenu.classList.remove('open');
+        burgerBtn.classList.remove('active');
+        document.body.style.overflow = '';
+      } else {
+        mobileMenu.classList.add('open');
+        burgerBtn.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        burgerBtn.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
   // ─── HERO ANIMATIONS ───
   var heroTl = gsap.timeline({ delay: 0.3, defaults: { ease: 'power3.out' } });
   heroTl

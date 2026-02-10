@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════
-   RANKRUSH — APP.JS v2
+   RANKRUSH — APP.JS v3
    Approche : gsap.from() — le contenu est visible par défaut.
    Les animations sont progressives et non bloquantes.
    ═══════════════════════════════════════════════════════════════════ */
@@ -8,13 +8,12 @@
   'use strict';
 
   // ─── SMOOTH SCROLL (LENIS) ───
-  let lenis;
+  var lenis;
   try {
     lenis = new Lenis({ lerp: 0.07, smoothWheel: true, wheelMultiplier: 0.8 });
-    // Single RAF loop — NO double call
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
-  } catch (e) { /* Lenis failed to load — smooth scroll disabled, page still works */ }
+  } catch (e) { /* Lenis failed — smooth scroll disabled, page still works */ }
 
   // ─── GSAP SETUP ───
   gsap.registerPlugin(ScrollTrigger);
@@ -23,13 +22,13 @@
   }
 
   // ─── YEAR ───
-  const yearEl = document.getElementById('year');
+  var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // ─── CURSOR GLOW (desktop only) ───
-  const cursorGlow = document.getElementById('cursor-glow');
+  var cursorGlow = document.getElementById('cursor-glow');
   if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
-    let mx = 0, my = 0, gx = 0, gy = 0;
+    var mx = 0, my = 0, gx = 0, gy = 0;
     document.addEventListener('mousemove', function (e) {
       mx = e.clientX; my = e.clientY;
       if (!cursorGlow.classList.contains('active')) cursorGlow.classList.add('active');
@@ -42,15 +41,6 @@
     document.addEventListener('mouseleave', function () { cursorGlow.classList.remove('active'); });
     document.addEventListener('mouseenter', function () { cursorGlow.classList.add('active'); });
   }
-
-  // ─── BENTO CARD MOUSE TRACKING ───
-  document.querySelectorAll('.bento-card').forEach(function (card) {
-    card.addEventListener('mousemove', function (e) {
-      var r = card.getBoundingClientRect();
-      card.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
-      card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
-    });
-  });
 
   // ─── NAVBAR SHOW/HIDE ───
   var navbar = document.getElementById('navbar');
@@ -69,7 +59,7 @@
     });
   }
 
-  // ─── HERO ANIMATIONS (gsap.from — elements visible by default) ───
+  // ─── HERO ANIMATIONS ───
   var heroTl = gsap.timeline({ delay: 0.3, defaults: { ease: 'power3.out' } });
   heroTl
     .from('.hero-badge', { opacity: 0, y: 20, duration: 0.6 })
@@ -77,14 +67,6 @@
     .from('.hero-title + p', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
     .from('.hero-title ~ div', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
     .from('.hero-phone', { opacity: 0, y: 60, rotateY: -5, duration: 1 }, '-=0.6');
-
-  // ─── SCROLL REVEAL (gsap.from — visible if JS fails) ───
-  gsap.utils.toArray('.section-tag, .section-title, .bento-card, .stat-item, .faq-item, .contact-card, #download h2, #download p, #download div').forEach(function (el) {
-    gsap.from(el, {
-      scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' },
-      opacity: 0, y: 24, duration: 0.6, ease: 'power3.out'
-    });
-  });
 
   // ─── HERO CAROUSEL ───
   var carouselImgs = document.querySelectorAll('#hero-carousel .carousel-img');
@@ -97,31 +79,104 @@
     }, 3500);
   }
 
-  // ─── SHOWCASE DRAG SCROLL ───
-  var container = document.querySelector('.showcase-container');
-  if (container) {
-    var dragging = false, startX = 0, sl = 0;
-    container.addEventListener('mousedown', function (e) {
-      dragging = true; startX = e.pageX; sl = container.scrollLeft;
-      container.style.cursor = 'grabbing';
+  // ─── SCROLL REVEAL (section titles, steps, stats, faq, contact, cta) ───
+  gsap.utils.toArray('.section-tag, .section-title, .step-card, .step-connector, .stat-card, .faq-item, .contact-card, #download h2, #download p, #download div').forEach(function (el) {
+    gsap.from(el, {
+      scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' },
+      opacity: 0, y: 24, duration: 0.6, ease: 'power3.out'
     });
-    document.addEventListener('mouseup', function () {
-      dragging = false;
-      if (container) container.style.cursor = 'grab';
-    });
-    container.addEventListener('mousemove', function (e) {
-      if (!dragging) return;
-      e.preventDefault();
-      container.scrollLeft = sl - (e.pageX - startX) * 1.5;
-    });
+  });
 
-    // Staggered reveal
-    gsap.utils.toArray('.showcase-card').forEach(function (card, i) {
-      gsap.from(card, {
-        scrollTrigger: { trigger: '#showcase', start: 'top 80%', toggleActions: 'play none none none' },
-        opacity: 0, x: 50, duration: 0.6, delay: i * 0.08, ease: 'power3.out'
+  // ─── FEATURE ROWS — staggered reveal ───
+  gsap.utils.toArray('.feature-row').forEach(function (row) {
+    var visual = row.querySelector('.feature-visual');
+    var content = row.querySelector('.feature-content');
+
+    if (visual) {
+      gsap.from(visual, {
+        scrollTrigger: { trigger: row, start: 'top 80%', toggleActions: 'play none none none' },
+        opacity: 0, y: 40, duration: 0.8, ease: 'power3.out'
       });
+    }
+    if (content) {
+      gsap.from(content, {
+        scrollTrigger: { trigger: row, start: 'top 80%', toggleActions: 'play none none none' },
+        opacity: 0, y: 40, duration: 0.8, delay: 0.2, ease: 'power3.out'
+      });
+    }
+  });
+
+  // ─── GALLERY TAB SWITCHING ───
+  var galleryData = [
+    { title: 'Matchs en direct', desc: 'Tous les matchs eSport en un coup d\'œil. Filtre par jeu, par statut et place tes paris en quelques secondes.' },
+    { title: 'Validation de pari', desc: 'Choisis ta mise, active tes cartes boost pour maximiser tes gains et valide ton pronostic.' },
+    { title: 'Collection de cartes', desc: 'Plus de 419 cartes d\'équipes eSport à collectionner. Bronze, Argent, Or et Platine.' },
+    { title: 'Ligues & Classement', desc: 'Du rang Fer à Grand Maître, grimpe les ligues et domine le classement hebdomadaire.' },
+    { title: 'Boutique & Packs', desc: 'Packs quotidiens gratuits et packs premium. Enrichis ta collection et débloque des cartes rares.' },
+    { title: 'Profil & Statistiques', desc: 'Tes stats, ton winrate, ta progression complète et ta place dans le classement.' }
+  ];
+
+  var galleryTabs = document.querySelectorAll('.gallery-tab');
+  var galleryScreens = document.querySelectorAll('.gallery-screen');
+  var galleryTitle = document.getElementById('gallery-title');
+  var galleryDesc = document.getElementById('gallery-desc');
+  var galleryActiveIndex = 0;
+
+  function switchGallery(index) {
+    if (index === galleryActiveIndex) return;
+
+    // Update tabs
+    galleryTabs.forEach(function (tab) { tab.classList.remove('active'); });
+    galleryTabs[index].classList.add('active');
+
+    // Update screens
+    galleryScreens.forEach(function (screen) { screen.classList.remove('active'); });
+    galleryScreens[index].classList.add('active');
+
+    // Update caption with fade
+    if (galleryTitle && galleryDesc) {
+      galleryTitle.style.opacity = '0';
+      galleryDesc.style.opacity = '0';
+      setTimeout(function () {
+        galleryTitle.textContent = galleryData[index].title;
+        galleryDesc.textContent = galleryData[index].desc;
+        galleryTitle.style.opacity = '1';
+        galleryDesc.style.opacity = '1';
+      }, 200);
+    }
+
+    galleryActiveIndex = index;
+  }
+
+  galleryTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var idx = parseInt(tab.getAttribute('data-index'), 10);
+      switchGallery(idx);
     });
+  });
+
+  // Auto-cycle gallery every 5s
+  var galleryAutoplay;
+  function startGalleryAutoplay() {
+    galleryAutoplay = setInterval(function () {
+      var next = (galleryActiveIndex + 1) % galleryData.length;
+      switchGallery(next);
+    }, 5000);
+  }
+  function stopGalleryAutoplay() {
+    clearInterval(galleryAutoplay);
+  }
+
+  if (galleryTabs.length > 0) {
+    startGalleryAutoplay();
+    // Pause on user interaction, resume after 10s
+    var gallerySection = document.getElementById('gallery-tabs');
+    if (gallerySection) {
+      gallerySection.addEventListener('click', function () {
+        stopGalleryAutoplay();
+        setTimeout(startGalleryAutoplay, 10000);
+      });
+    }
   }
 
   // ─── STAT COUNTER ───

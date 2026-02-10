@@ -65,7 +65,6 @@
 
     <!-- ══════════ HERO ══════════ -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <!-- VIDEO -->
       <div class="hero-video-wrap">
         <video autoplay muted loop playsinline poster="./assets/screen-matches-1.jpg">
           <source src="./assets/Esports_Arena_Video_Generation (1).mp4" type="video/mp4" />
@@ -73,7 +72,6 @@
         <div class="hero-overlay"></div>
       </div>
 
-      <!-- CONTENT -->
       <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-32 pb-20 w-full">
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div class="lg:col-span-7">
@@ -97,7 +95,6 @@
               <a href="#features" class="btn-outline">Explorer les features</a>
             </div>
           </div>
-          <!-- PHONE -->
           <div class="lg:col-span-5 hero-phone-wrapper">
             <div class="hero-phone">
               <div class="phone-frame">
@@ -139,122 +136,283 @@
       </div>
     </div>
 
-    <!-- ══════════ FEATURES BENTO ══════════ -->
-    <section id="features" class="relative py-24 md:py-32">
-      <div class="section-glow section-glow--left"></div>
+    <!-- ══════════ HOW IT WORKS ══════════ -->
+    <section class="relative py-24 md:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="text-center mb-16 md:mb-20">
-          <p class="section-tag">Fonctionnalités</p>
+          <p class="section-tag">Comment ça marche</p>
           <h2 class="section-title font-display font-bold">
-            Tout ce qui rend RankRush<br/><span class="text-gradient">addictive</span>
+            3 étapes pour<br/><span class="text-gradient">commencer</span>
           </h2>
         </div>
-
-        <div class="bento-grid">
-          <div class="bento-card bento-card--large">
-            <div class="bento-card-inner">
-              <div class="bento-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </div>
-              <h3 class="bento-title">Paris sans risque</h3>
-              <p class="bento-desc">Crédits virtuels uniquement. 0&nbsp;€ en jeu, 100&nbsp;% compétition pure. Parie sur tes équipes favorites sans jamais risquer un centime.</p>
-              <div class="bento-visual">
-                <img src="./assets/screen-matches-1.jpg" alt="Interface des matchs" class="bento-phone" />
-              </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num font-display">1</div>
+            <div class="step-icon step-icon--violet">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </div>
+            <h3 class="step-title font-display">Télécharge l'app</h3>
+            <p class="step-desc">Installe RankRush gratuitement sur iOS et crée ton compte en quelques secondes.</p>
           </div>
-
-          <div class="bento-card">
-            <div class="bento-card-inner">
-              <div class="bento-icon bento-icon--cyan">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 10h20"/></svg>
-              </div>
-              <h3 class="bento-title">Cartes Boost</h3>
-              <p class="bento-desc">Collectionne des cartes d'équipes eSport et active des bonus sur tes paris pour maximiser tes gains.</p>
+          <div class="step-connector"><svg width="40" height="2"><line x1="0" y1="1" x2="40" y2="1" stroke="rgba(139,92,246,.3)" stroke-width="2" stroke-dasharray="6 4"/></svg></div>
+          <div class="step-card">
+            <div class="step-num font-display">2</div>
+            <div class="step-icon step-icon--cyan">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
             </div>
+            <h3 class="step-title font-display">Parie sur tes matchs</h3>
+            <p class="step-desc">Analyse les cotes, active tes cartes boost et place ta mise sur les matchs eSport.</p>
           </div>
-
-          <div class="bento-card">
-            <div class="bento-card-inner">
-              <div class="bento-icon bento-icon--emerald">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7.4 4 9 7 9 7"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5C16.6 4 15 7 15 7"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-              </div>
-              <h3 class="bento-title">Ligues &amp; Classement</h3>
-              <p class="bento-desc">Monte de Fer à Maître. Chaque pari compte pour ton classement hebdomadaire.</p>
+          <div class="step-connector"><svg width="40" height="2"><line x1="0" y1="1" x2="40" y2="1" stroke="rgba(139,92,246,.3)" stroke-width="2" stroke-dasharray="6 4"/></svg></div>
+          <div class="step-card">
+            <div class="step-num font-display">3</div>
+            <div class="step-icon step-icon--emerald">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7.4 4 9 7 9 7"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5C16.6 4 15 7 15 7"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
             </div>
-          </div>
-
-          <div class="bento-card">
-            <div class="bento-card-inner">
-              <div class="bento-icon bento-icon--amber">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-              </div>
-              <h3 class="bento-title">Récompenses quotidiennes</h3>
-              <p class="bento-desc">Ouvre un pack gratuit chaque jour. Connecte-toi et enrichis ta collection.</p>
-            </div>
-          </div>
-
-          <div class="bento-card bento-card--large">
-            <div class="bento-card-inner">
-              <div class="bento-icon bento-icon--pink">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </div>
-              <h3 class="bento-title">Boutique &amp; Packs</h3>
-              <p class="bento-desc">Packs Bronze, Argent, Or et Ultimate. Enrichis ta collection et débloque des cartes rares pour booster tes paris.</p>
-              <div class="bento-visual">
-                <img src="./assets/screen-shop.jpg" alt="Boutique" class="bento-phone" />
-              </div>
-            </div>
-          </div>
-
-          <div class="bento-card">
-            <div class="bento-card-inner">
-              <div class="bento-icon bento-icon--blue">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-              </div>
-              <h3 class="bento-title">Stats &amp; Analytics</h3>
-              <p class="bento-desc">Forme récente, cotes live et historique complet pour prendre l'avantage.</p>
-            </div>
+            <h3 class="step-title font-display">Grimpe &amp; Domine</h3>
+            <p class="step-desc">Gagne des crédits, collectionne les cartes et deviens le meilleur pronostiqueur.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════ APP SHOWCASE ══════════ -->
+    <!-- ══════════ FEATURES DEEP-DIVE ══════════ -->
+    <section id="features" class="relative py-12 md:py-20 overflow-hidden">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="text-center mb-20 md:mb-28">
+          <p class="section-tag">Fonctionnalités</p>
+          <h2 class="section-title font-display font-bold">
+            Tout ce qui rend RankRush<br/><span class="text-gradient">addictive</span>
+          </h2>
+          <p class="mt-6 text-lg text-white/40 max-w-2xl mx-auto leading-relaxed">
+            Paris en direct, collection de cartes, système de ligues et boutique. Découvre chaque feature en détail.
+          </p>
+        </div>
+
+        <!-- Feature 1: Paris en direct -->
+        <div class="feature-row">
+          <div class="feature-visual">
+            <div class="feature-phone-wrap">
+              <div class="ft-phone-frame">
+                <div class="ft-phone-notch"></div>
+                <div class="ft-phone-screen">
+                  <img src="./assets/screen-matches-2.jpg" alt="Matchs en direct" />
+                </div>
+              </div>
+              <div class="feature-phone-glow feature-glow--red"></div>
+            </div>
+          </div>
+          <div class="feature-content">
+            <div class="feature-header">
+              <span class="feature-num font-display">01</span>
+              <span class="feature-pill feature-pill--red">Paris en direct</span>
+            </div>
+            <h3 class="feature-title font-display font-bold">
+              Parie sur les matchs<br/>en temps réel
+            </h3>
+            <p class="feature-desc">
+              Suis les matchs eSport live et place tes pronostics avec des cotes qui évoluent en direct. Valorant, League of Legends, Counter-Strike et plus encore.
+            </p>
+            <ul class="feature-points">
+              <li>
+                <span class="fp-check fp-check--red"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Cotes dynamiques en temps réel
+              </li>
+              <li>
+                <span class="fp-check fp-check--red"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                5+ jeux eSport supportés
+              </li>
+              <li>
+                <span class="fp-check fp-check--red"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Matchs live, à venir et terminés
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feature 2: Pronostics -->
+        <div class="feature-row feature-row--reverse">
+          <div class="feature-visual">
+            <div class="feature-phone-wrap">
+              <div class="ft-phone-frame">
+                <div class="ft-phone-notch"></div>
+                <div class="ft-phone-screen">
+                  <img src="./assets/screen-bet.jpg" alt="Validation de pari" />
+                </div>
+              </div>
+              <div class="feature-phone-glow feature-glow--cyan"></div>
+            </div>
+          </div>
+          <div class="feature-content">
+            <div class="feature-header">
+              <span class="feature-num font-display">02</span>
+              <span class="feature-pill feature-pill--cyan">Pronostics</span>
+            </div>
+            <h3 class="feature-title font-display font-bold">
+              Place ta mise<br/>et valide ton pari
+            </h3>
+            <p class="feature-desc">
+              Choisis ton montant avec le slider, active tes cartes boost pour maximiser tes gains et consulte la forme récente des équipes avant de parier.
+            </p>
+            <ul class="feature-points">
+              <li>
+                <span class="fp-check fp-check--cyan"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Slider de mise intuitif
+              </li>
+              <li>
+                <span class="fp-check fp-check--cyan"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Bonus cartes jusqu'à +15%
+              </li>
+              <li>
+                <span class="fp-check fp-check--cyan"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Historique et forme des équipes
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feature 3: Collection -->
+        <div class="feature-row">
+          <div class="feature-visual">
+            <div class="feature-phone-wrap">
+              <div class="ft-phone-frame">
+                <div class="ft-phone-notch"></div>
+                <div class="ft-phone-screen">
+                  <img src="./assets/screen-cards.jpg" alt="Collection de cartes" />
+                </div>
+              </div>
+              <div class="feature-phone-glow feature-glow--amber"></div>
+            </div>
+          </div>
+          <div class="feature-content">
+            <div class="feature-header">
+              <span class="feature-num font-display">03</span>
+              <span class="feature-pill feature-pill--amber">Collection</span>
+            </div>
+            <h3 class="feature-title font-display font-bold">
+              Collectionne toutes<br/>les cartes eSport
+            </h3>
+            <p class="feature-desc">
+              Plus de 419 cartes d'équipes eSport à collectionner. Bronze, Argent, Or et Platine — chaque rareté augmente tes bonus sur les paris.
+            </p>
+            <ul class="feature-points">
+              <li>
+                <span class="fp-check fp-check--amber"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                419+ cartes à collectionner
+              </li>
+              <li>
+                <span class="fp-check fp-check--amber"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                4 niveaux de rareté
+              </li>
+              <li>
+                <span class="fp-check fp-check--amber"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Boost tes gains avec les cartes
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feature 4: Ligues -->
+        <div class="feature-row feature-row--reverse">
+          <div class="feature-visual">
+            <div class="feature-phone-wrap">
+              <div class="ft-phone-frame">
+                <div class="ft-phone-notch"></div>
+                <div class="ft-phone-screen">
+                  <img src="./assets/screen-league.jpg" alt="Ligues et classement" />
+                </div>
+              </div>
+              <div class="feature-phone-glow feature-glow--violet"></div>
+            </div>
+          </div>
+          <div class="feature-content">
+            <div class="feature-header">
+              <span class="feature-num font-display">04</span>
+              <span class="feature-pill feature-pill--violet">Compétition</span>
+            </div>
+            <h3 class="feature-title font-display font-bold">
+              Grimpe les ligues<br/>et domine le classement
+            </h3>
+            <p class="feature-desc">
+              Du rang Fer jusqu'à Grand Maître, chaque pari gagné te rapproche du sommet. Suis ta progression et compare-toi aux meilleurs pronostiqueurs.
+            </p>
+            <ul class="feature-points">
+              <li>
+                <span class="fp-check fp-check--violet"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                6 rangs à gravir
+              </li>
+              <li>
+                <span class="fp-check fp-check--violet"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Classement hebdomadaire
+              </li>
+              <li>
+                <span class="fp-check fp-check--violet"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Système de RP (Rank Points)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ APP GALLERY (interactive tabs) ══════════ -->
     <section id="showcase" class="relative py-24 md:py-32 overflow-hidden">
       <div class="section-glow section-glow--right"></div>
-      <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-20">
-        <p class="section-tag">L'application</p>
-        <h2 class="section-title font-display font-bold">
-          Découvre chaque écran<br/><span class="text-gradient">de RankRush</span>
-        </h2>
-      </div>
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="text-center mb-16 md:mb-20">
+          <p class="section-tag">L'application</p>
+          <h2 class="section-title font-display font-bold">
+            Explore chaque écran<br/><span class="text-gradient">de RankRush</span>
+          </h2>
+        </div>
 
-      <div class="showcase-container">
-        <div class="showcase-track" id="showcase-track">
-          <div class="showcase-card">
-            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-matches-1.jpg" alt="Matchs" /></div></div>
-            <div class="showcase-label"><span class="showcase-number">01</span><h3>Matchs</h3><p>En direct, à venir ou passés. Toutes les cotes en temps réel.</p></div>
+        <!-- Tabs -->
+        <div class="gallery-tabs" id="gallery-tabs">
+          <button class="gallery-tab active" data-index="0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
+            <span>Matchs</span>
+          </button>
+          <button class="gallery-tab" data-index="1">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            <span>Paris</span>
+          </button>
+          <button class="gallery-tab" data-index="2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 10h20"/></svg>
+            <span>Collection</span>
+          </button>
+          <button class="gallery-tab" data-index="3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7.4 4 9 7 9 7"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5C16.6 4 15 7 15 7"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            <span>Ligues</span>
+          </button>
+          <button class="gallery-tab" data-index="4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Boutique</span>
+          </button>
+          <button class="gallery-tab" data-index="5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Profil</span>
+          </button>
+        </div>
+
+        <!-- Phone + Caption -->
+        <div class="gallery-display">
+          <div class="gallery-phone">
+            <div class="gallery-phone-frame">
+              <div class="gallery-phone-notch"></div>
+              <div class="gallery-phone-screen">
+                <img src="./assets/screen-matches-1.jpg" alt="Matchs" class="gallery-screen active" data-index="0" />
+                <img src="./assets/screen-bet.jpg" alt="Paris" class="gallery-screen" data-index="1" />
+                <img src="./assets/screen-cards.jpg" alt="Collection" class="gallery-screen" data-index="2" />
+                <img src="./assets/screen-league.jpg" alt="Ligues" class="gallery-screen" data-index="3" />
+                <img src="./assets/screen-shop.jpg" alt="Boutique" class="gallery-screen" data-index="4" />
+                <img src="./assets/screen-profile.jpg" alt="Profil" class="gallery-screen" data-index="5" />
+              </div>
+            </div>
+            <div class="gallery-phone-glow"></div>
           </div>
-          <div class="showcase-card">
-            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-bet.jpg" alt="Pari" /></div></div>
-            <div class="showcase-label"><span class="showcase-number">02</span><h3>Validation de pari</h3><p>Choisis ta mise, active tes cartes boost et valide.</p></div>
-          </div>
-          <div class="showcase-card">
-            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-cards.jpg" alt="Cartes" /></div></div>
-            <div class="showcase-label"><span class="showcase-number">03</span><h3>Collection</h3><p>Bronze, Argent, Or, Platine. Collectionne toutes les équipes.</p></div>
-          </div>
-          <div class="showcase-card">
-            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-league.jpg" alt="Ligues" /></div></div>
-            <div class="showcase-label"><span class="showcase-number">04</span><h3>Ligues</h3><p>Grimpe les rangs et deviens le meilleur pronostiqueur.</p></div>
-          </div>
-          <div class="showcase-card">
-            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-shop.jpg" alt="Boutique" /></div></div>
-            <div class="showcase-label"><span class="showcase-number">05</span><h3>Boutique</h3><p>Packs quotidiens gratuits et packs premium à débloquer.</p></div>
-          </div>
-          <div class="showcase-card">
-            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-profile.jpg" alt="Profil" /></div></div>
-            <div class="showcase-label"><span class="showcase-number">06</span><h3>Profil &amp; Stats</h3><p>Tes statistiques, ton winrate et ta progression complète.</p></div>
+          <div class="gallery-caption" id="gallery-caption">
+            <h3 class="gallery-caption-title font-display" id="gallery-title">Matchs en direct</h3>
+            <p class="gallery-caption-desc" id="gallery-desc">Tous les matchs eSport en un coup d'œil. Filtre par jeu, par statut et place tes paris en quelques secondes.</p>
           </div>
         </div>
       </div>
@@ -263,20 +421,20 @@
     <!-- ══════════ STATS ══════════ -->
     <section class="relative py-20 md:py-28 border-y border-white/5">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          <div class="stat-item">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div class="stat-card">
             <span class="stat-number font-display" data-count="5">5</span><span class="stat-suffix font-display">+</span>
             <p class="stat-label">Jeux supportés</p>
           </div>
-          <div class="stat-item">
+          <div class="stat-card">
             <span class="stat-number font-display" data-count="100">100</span><span class="stat-suffix font-display">%</span>
             <p class="stat-label">Gratuit, sans argent réel</p>
           </div>
-          <div class="stat-item">
+          <div class="stat-card">
             <span class="stat-number font-display" data-count="419">419</span><span class="stat-suffix font-display">+</span>
             <p class="stat-label">Cartes à collectionner</p>
           </div>
-          <div class="stat-item">
+          <div class="stat-card">
             <span class="stat-number font-display" data-count="6">6</span><span class="stat-suffix font-display"></span>
             <p class="stat-label">Ligues à gravir</p>
           </div>

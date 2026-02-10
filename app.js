@@ -15,6 +15,15 @@
     requestAnimationFrame(raf);
   } catch (e) { /* Lenis failed — smooth scroll disabled, page still works */ }
 
+  // ─── HERO VIDEO FADE-IN ───
+  var heroVideo = document.querySelector('.hero-video-wrap video');
+  if (heroVideo) {
+    heroVideo.addEventListener('canplay', function () {
+      heroVideo.classList.add('loaded');
+    });
+    if (heroVideo.readyState >= 3) heroVideo.classList.add('loaded');
+  }
+
   // ─── GSAP SETUP ───
   gsap.registerPlugin(ScrollTrigger);
   if (lenis) {

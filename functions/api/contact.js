@@ -28,7 +28,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: 'RankRush Contact <onboarding@resend.dev>',
-        to: ['mth0024@proton.me'],
+        to: ['mavilleverte@proton.me'],
         subject: 'RankRush — Message de ' + name,
         reply_to: email,
         html: '<h2>Nouveau message depuis rankrush</h2>'

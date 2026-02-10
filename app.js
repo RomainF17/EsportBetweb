@@ -183,12 +183,13 @@
   document.querySelectorAll('.stat-number').forEach(function (el) {
     var target = parseInt(el.dataset.count, 10);
     if (isNaN(target)) return;
+    var obj = { v: 0 };
     ScrollTrigger.create({
       trigger: el, start: 'top 85%', once: true,
       onEnter: function () {
-        gsap.from({ v: 0 }, {
+        gsap.to(obj, {
           v: target, duration: 1.8, ease: 'power2.out',
-          onUpdate: function () { el.textContent = Math.round(this.targets()[0].v); }
+          onUpdate: function () { el.textContent = Math.round(obj.v); }
         });
       }
     });

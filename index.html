@@ -88,11 +88,14 @@
               L'app iOS de paris eSport 100&nbsp;% fun. Aucun argent réel, juste tes crédits, tes cartes bonus et ta place au classement.
             </p>
             <div class="mt-10 flex flex-wrap gap-4">
-              <a href="#download" class="btn-glow">
-                <span>Télécharger sur iOS</span>
+              <span class="btn-glow btn-glow--disabled">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              </a>
-              <a href="#features" class="btn-outline">Explorer les features</a>
+                <span>App Store — Coming Soon</span>
+              </span>
+              <button class="btn-outline btn-open-beta">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Installer la bêta</span>
+              </button>
             </div>
           </div>
           <div class="lg:col-span-5 hero-phone-wrapper">
@@ -481,11 +484,14 @@
           Télécharge RankRush gratuitement et commence à parier sur tes équipes favorites dès maintenant.
         </p>
         <div class="mt-10 flex flex-wrap justify-center gap-4">
-          <a href="#" class="btn-glow btn-glow--lg">
+          <span class="btn-glow btn-glow--lg btn-glow--disabled">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            <span>Télécharger sur l'App Store</span>
-          </a>
-          <a href="#" class="btn-outline btn-outline--lg"><span>Rejoindre la bêta TestFlight</span></a>
+            <span>App Store — Coming Soon</span>
+          </span>
+          <button class="btn-outline btn-outline--lg btn-open-beta">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Installer la bêta</span>
+          </button>
         </div>
       </div>
     </section>
@@ -527,6 +533,82 @@
         </div>
       </div>
     </footer>
+
+    <!-- ══════════ MODAL BÊTA ══════════ -->
+    <div id="beta-modal" class="modal-overlay">
+      <div class="modal-card">
+        <button class="modal-close" id="modal-close" aria-label="Fermer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+
+        <div class="modal-header">
+          <div class="modal-logo-wrap">
+            <img src="./assets/logo.png" alt="RankRush" class="modal-logo" />
+          </div>
+          <h3 class="font-display font-bold">Installer la bêta RankRush</h3>
+          <p>Suis ces étapes pour installer l'app sur ton iPhone via AltStore.</p>
+        </div>
+
+        <div class="modal-steps">
+          <div class="modal-step">
+            <span class="modal-step-num font-display">1</span>
+            <div class="modal-step-content">
+              <h4>Installe AltServer Classic</h4>
+              <p>Télécharge et installe <strong>AltServer Classic</strong> sur ton PC ou Mac.</p>
+              <a href="https://altstore.io/#Downloads" target="_blank" rel="noopener" class="modal-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                altstore.io — Downloads
+              </a>
+            </div>
+          </div>
+
+          <div class="modal-step">
+            <span class="modal-step-num font-display">2</span>
+            <div class="modal-step-content">
+              <h4>Installe AltStore sur ton iPhone</h4>
+              <p>Connecte ton iPhone au PC/Mac et utilise AltServer pour installer AltStore sur ton appareil.</p>
+            </div>
+          </div>
+
+          <div class="modal-step">
+            <span class="modal-step-num font-display">3</span>
+            <div class="modal-step-content">
+              <h4>Active le mode développeur</h4>
+              <p>Sur ton iPhone : <strong>Réglages &rarr; Confidentialité et sécurité &rarr; Mode développeur</strong>. Active-le et redémarre.</p>
+            </div>
+          </div>
+
+          <div class="modal-step">
+            <span class="modal-step-num font-display">4</span>
+            <div class="modal-step-content">
+              <h4>Ajoute la source RankRush</h4>
+              <p>Ouvre AltStore sur ton iPhone, va dans <strong>Sources</strong>, appuie sur <strong>+</strong> et colle cette URL :</p>
+              <div class="modal-source-url" id="source-url">
+                <code>https://raw.githubusercontent.com/RomainF17/EsportBetAltstore/refs/heads/main/apps.json</code>
+                <button class="modal-copy" id="copy-source" aria-label="Copier">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-step">
+            <span class="modal-step-num font-display">5</span>
+            <div class="modal-step-content">
+              <h4>Installe RankRush</h4>
+              <p>La source ajoutée, l'app <strong>RankRush</strong> apparaît. Appuie sur <strong>Installer</strong> et c'est parti !</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <a href="https://altstore.io/#Downloads" target="_blank" rel="noopener" class="btn-glow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Télécharger AltServer</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- LIBS -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

@@ -212,6 +212,49 @@
     });
   });
 
+  // ─── MODAL BÊTA ───
+  var modal = document.getElementById('beta-modal');
+  var modalClose = document.getElementById('modal-close');
+  var openBtns = document.querySelectorAll('.btn-open-beta');
+  var copyBtn = document.getElementById('copy-source');
+
+  function openModal() {
+    if (modal) {
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  function closeModal() {
+    if (modal) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  openBtns.forEach(function (btn) {
+    btn.addEventListener('click', openModal);
+  });
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modal) {
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Copy source URL
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var url = 'https://raw.githubusercontent.com/RomainF17/EsportBetAltstore/refs/heads/main/apps.json';
+      navigator.clipboard.writeText(url).then(function () {
+        copyBtn.classList.add('copied');
+        setTimeout(function () { copyBtn.classList.remove('copied'); }, 2000);
+      });
+    });
+  }
+
   // ─── PARALLAX PHONE ───
   gsap.to('.hero-phone', {
     scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1 },

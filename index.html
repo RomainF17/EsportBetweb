@@ -39,13 +39,10 @@
 
   <body class="bg-dark-50 text-white font-body antialiased overflow-x-hidden">
 
-    <!-- NOISE OVERLAY -->
     <div class="noise"></div>
-
-    <!-- CURSOR GLOW -->
     <div id="cursor-glow" class="cursor-glow"></div>
 
-    <!-- ═══════════════════════════════════════ NAVBAR ═══════════════════════════════════════ -->
+    <!-- ══════════ NAVBAR ══════════ -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-hidden">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
@@ -54,58 +51,53 @@
             <span class="font-display font-bold text-lg tracking-wide opacity-90 group-hover:opacity-100 transition-opacity">RankRush</span>
           </a>
           <div class="hidden md:flex items-center gap-8">
-            <a href="#features" class="nav-link">Fonctionnalites</a>
-            <a href="#showcase" class="nav-link">App</a>
+            <a href="#features" class="nav-link">Fonctionnalités</a>
+            <a href="#showcase" class="nav-link">L'app</a>
             <a href="#faq" class="nav-link">FAQ</a>
           </div>
-          <a href="#download" class="btn-primary text-sm">
-            <span>Telecharger</span>
+          <a href="#download" class="btn-nav">
+            <span>Télécharger</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           </a>
         </div>
       </div>
     </nav>
 
-    <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+    <!-- ══════════ HERO ══════════ -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <!-- VIDEO BG -->
-      <div class="absolute inset-0 z-0">
-        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" poster="./assets/screen-matches-1.jpg">
+      <!-- VIDEO -->
+      <div class="hero-video-wrap">
+        <video autoplay muted loop playsinline poster="./assets/screen-matches-1.jpg">
           <source src="./assets/Esports_Arena_Video_Generation (1).mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 bg-dark-50/70"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-dark-50/40 via-transparent to-dark-50"></div>
-        <div class="absolute inset-0 hero-vignette"></div>
+        <div class="hero-overlay"></div>
       </div>
 
       <!-- CONTENT -->
       <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-32 pb-20 w-full">
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <!-- TEXT -->
-          <div class="lg:col-span-7 hero-text">
+          <div class="lg:col-span-7">
             <div class="hero-badge">
               <span class="inline-block w-2 h-2 rounded-full bg-emerald animate-pulse mr-2"></span>
-              Paris eSport — Sans argent reel
+              Paris eSport — Sans argent réel
             </div>
             <h1 class="hero-title font-display font-bold">
-              <span class="block hero-line">Parie.</span>
-              <span class="block hero-line">Clash.</span>
-              <span class="block hero-line text-gradient">Domine.</span>
+              <span class="block">Parie.</span>
+              <span class="block">Clash.</span>
+              <span class="block text-gradient">Domine.</span>
             </h1>
-            <p class="hero-desc mt-6 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed">
-              L'app iOS de paris eSport 100% fun. Aucun argent reel, juste tes credits, tes cartes bonus et ta place au classement.
+            <p class="mt-6 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed">
+              L'app iOS de paris eSport 100&nbsp;% fun. Aucun argent réel, juste tes crédits, tes cartes bonus et ta place au classement.
             </p>
-            <div class="hero-ctas mt-10 flex flex-wrap gap-4">
+            <div class="mt-10 flex flex-wrap gap-4">
               <a href="#download" class="btn-glow">
-                <span>Telecharger sur iOS</span>
+                <span>Télécharger sur iOS</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               </a>
-              <a href="#features" class="btn-outline">
-                Explorer les features
-              </a>
+              <a href="#features" class="btn-outline">Explorer les features</a>
             </div>
           </div>
-          <!-- PHONE MOCKUP -->
+          <!-- PHONE -->
           <div class="lg:col-span-5 hero-phone-wrapper">
             <div class="hero-phone">
               <div class="phone-frame">
@@ -113,8 +105,8 @@
                 <div class="phone-screen">
                   <div id="hero-carousel" class="phone-carousel">
                     <img src="./assets/screen-matches-1.jpg" alt="Matchs en cours" class="carousel-img active" />
-                    <img src="./assets/screen-matches-2.jpg" alt="Matchs a venir" class="carousel-img" />
-                    <img src="./assets/screen-matches-3.jpg" alt="Matchs passes" class="carousel-img" />
+                    <img src="./assets/screen-matches-2.jpg" alt="Matchs à venir" class="carousel-img" />
+                    <img src="./assets/screen-matches-3.jpg" alt="Matchs passés" class="carousel-img" />
                   </div>
                 </div>
               </div>
@@ -124,328 +116,230 @@
         </div>
       </div>
 
-      <!-- SCROLL INDICATOR -->
       <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ MARQUEE ═══════════════════════════════════════ -->
-    <div class="marquee-section relative py-6 border-y border-white/5 bg-dark-100/80 backdrop-blur-xl overflow-hidden">
+    <!-- ══════════ MARQUEE ══════════ -->
+    <div class="relative py-6 border-y border-white/5 overflow-hidden" style="background:rgba(10,10,16,.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)">
       <div class="marquee-track">
         <div class="marquee-content">
-          <span class="marquee-item">VALORANT</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">LEAGUE OF LEGENDS</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">COUNTER-STRIKE</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">CALL OF DUTY</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">ROCKET LEAGUE</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">VALORANT</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">LEAGUE OF LEGENDS</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">COUNTER-STRIKE</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">CALL OF DUTY</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">ROCKET LEAGUE</span>
-          <span class="marquee-dot"></span>
+          <span class="marquee-item">VALORANT</span><span class="marquee-dot"></span>
+          <span class="marquee-item">LEAGUE OF LEGENDS</span><span class="marquee-dot"></span>
+          <span class="marquee-item">COUNTER-STRIKE</span><span class="marquee-dot"></span>
+          <span class="marquee-item">CALL OF DUTY</span><span class="marquee-dot"></span>
+          <span class="marquee-item">ROCKET LEAGUE</span><span class="marquee-dot"></span>
+          <span class="marquee-item">VALORANT</span><span class="marquee-dot"></span>
+          <span class="marquee-item">LEAGUE OF LEGENDS</span><span class="marquee-dot"></span>
+          <span class="marquee-item">COUNTER-STRIKE</span><span class="marquee-dot"></span>
+          <span class="marquee-item">CALL OF DUTY</span><span class="marquee-dot"></span>
+          <span class="marquee-item">ROCKET LEAGUE</span><span class="marquee-dot"></span>
         </div>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════ FEATURES BENTO ═══════════════════════════════════════ -->
+    <!-- ══════════ FEATURES BENTO ══════════ -->
     <section id="features" class="relative py-24 md:py-32">
       <div class="section-glow section-glow--left"></div>
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="text-center mb-16 md:mb-20">
-          <p class="section-tag reveal">Fonctionnalites</p>
-          <h2 class="section-title reveal font-display font-bold">
+          <p class="section-tag">Fonctionnalités</p>
+          <h2 class="section-title font-display font-bold">
             Tout ce qui rend RankRush<br/><span class="text-gradient">addictive</span>
           </h2>
         </div>
 
-        <!-- BENTO GRID -->
         <div class="bento-grid">
-          <!-- CARD 1 : Paris - Large -->
-          <div class="bento-card bento-card--large reveal">
+          <div class="bento-card bento-card--large">
             <div class="bento-card-inner">
               <div class="bento-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               </div>
               <h3 class="bento-title">Paris sans risque</h3>
-              <p class="bento-desc">Credits virtuels uniquement. 0 en jeu, 100% competition pure. Parie sur tes equipes favorites sans jamais risquer un centime.</p>
-              <div class="bento-visual bento-visual--matches">
+              <p class="bento-desc">Crédits virtuels uniquement. 0&nbsp;€ en jeu, 100&nbsp;% compétition pure. Parie sur tes équipes favorites sans jamais risquer un centime.</p>
+              <div class="bento-visual">
                 <img src="./assets/screen-matches-1.jpg" alt="Interface des matchs" class="bento-phone" />
               </div>
             </div>
           </div>
 
-          <!-- CARD 2 : Cartes -->
-          <div class="bento-card reveal">
+          <div class="bento-card">
             <div class="bento-card-inner">
               <div class="bento-icon bento-icon--cyan">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 10h20"/></svg>
               </div>
               <h3 class="bento-title">Cartes Boost</h3>
-              <p class="bento-desc">Collectionne des cartes d'equipes eSport et active des bonus sur tes paris pour maximiser tes gains.</p>
+              <p class="bento-desc">Collectionne des cartes d'équipes eSport et active des bonus sur tes paris pour maximiser tes gains.</p>
             </div>
           </div>
 
-          <!-- CARD 3 : Ligues -->
-          <div class="bento-card reveal">
+          <div class="bento-card">
             <div class="bento-card-inner">
               <div class="bento-icon bento-icon--emerald">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7.4 4 9 7 9 7"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5C16.6 4 15 7 15 7"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
               </div>
-              <h3 class="bento-title">Ligues & Classement</h3>
-              <p class="bento-desc">Monte de Fer a Maitre. Chaque pari compte pour ton classement.</p>
+              <h3 class="bento-title">Ligues &amp; Classement</h3>
+              <p class="bento-desc">Monte de Fer à Maître. Chaque pari compte pour ton classement hebdomadaire.</p>
             </div>
           </div>
 
-          <!-- CARD 4 : Recompenses -->
-          <div class="bento-card reveal">
+          <div class="bento-card">
             <div class="bento-card-inner">
               <div class="bento-icon bento-icon--amber">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
               </div>
-              <h3 class="bento-title">Rewards quotidiens</h3>
-              <p class="bento-desc">Pack gratuit chaque jour. Connecte-toi et collectionne.</p>
+              <h3 class="bento-title">Récompenses quotidiennes</h3>
+              <p class="bento-desc">Ouvre un pack gratuit chaque jour. Connecte-toi et enrichis ta collection.</p>
             </div>
           </div>
 
-          <!-- CARD 5 : Boutique - Large -->
-          <div class="bento-card bento-card--large reveal">
+          <div class="bento-card bento-card--large">
             <div class="bento-card-inner">
               <div class="bento-icon bento-icon--pink">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
               </div>
-              <h3 class="bento-title">Boutique & Packs</h3>
-              <p class="bento-desc">Packs Bronze, Argent, Or et Ultimate. Enrichis ta collection et debloque des cartes rares pour booster tes paris.</p>
-              <div class="bento-visual bento-visual--shop">
+              <h3 class="bento-title">Boutique &amp; Packs</h3>
+              <p class="bento-desc">Packs Bronze, Argent, Or et Ultimate. Enrichis ta collection et débloque des cartes rares pour booster tes paris.</p>
+              <div class="bento-visual">
                 <img src="./assets/screen-shop.jpg" alt="Boutique" class="bento-phone" />
               </div>
             </div>
           </div>
 
-          <!-- CARD 6 : Stats -->
-          <div class="bento-card reveal">
+          <div class="bento-card">
             <div class="bento-card-inner">
               <div class="bento-icon bento-icon--blue">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
               </div>
-              <h3 class="bento-title">Stats & Analytics</h3>
-              <p class="bento-desc">Forme recente, cotes live et historique complet pour prendre l'avantage.</p>
+              <h3 class="bento-title">Stats &amp; Analytics</h3>
+              <p class="bento-desc">Forme récente, cotes live et historique complet pour prendre l'avantage.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ APP SHOWCASE ═══════════════════════════════════════ -->
+    <!-- ══════════ APP SHOWCASE ══════════ -->
     <section id="showcase" class="relative py-24 md:py-32 overflow-hidden">
       <div class="section-glow section-glow--right"></div>
       <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-20">
-        <p class="section-tag reveal">L'application</p>
-        <h2 class="section-title reveal font-display font-bold">
-          Decouvre chaque ecran<br/><span class="text-gradient">de RankRush</span>
+        <p class="section-tag">L'application</p>
+        <h2 class="section-title font-display font-bold">
+          Découvre chaque écran<br/><span class="text-gradient">de RankRush</span>
         </h2>
       </div>
 
-      <!-- HORIZONTAL SCROLL -->
       <div class="showcase-container">
         <div class="showcase-track" id="showcase-track">
           <div class="showcase-card">
-            <div class="showcase-phone">
-              <div class="showcase-phone-frame">
-                <img src="./assets/screen-matches-1.jpg" alt="Matchs" loading="lazy" />
-              </div>
-            </div>
-            <div class="showcase-label">
-              <span class="showcase-number">01</span>
-              <h3>Matchs</h3>
-              <p>En direct, a venir ou passes. Toutes les cotes en temps reel.</p>
-            </div>
+            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-matches-1.jpg" alt="Matchs" /></div></div>
+            <div class="showcase-label"><span class="showcase-number">01</span><h3>Matchs</h3><p>En direct, à venir ou passés. Toutes les cotes en temps réel.</p></div>
           </div>
           <div class="showcase-card">
-            <div class="showcase-phone">
-              <div class="showcase-phone-frame">
-                <img src="./assets/screen-bet.jpg" alt="Paris" loading="lazy" />
-              </div>
-            </div>
-            <div class="showcase-label">
-              <span class="showcase-number">02</span>
-              <h3>Validation de pari</h3>
-              <p>Choisis ta mise, active tes cartes boost et valide.</p>
-            </div>
+            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-bet.jpg" alt="Pari" /></div></div>
+            <div class="showcase-label"><span class="showcase-number">02</span><h3>Validation de pari</h3><p>Choisis ta mise, active tes cartes boost et valide.</p></div>
           </div>
           <div class="showcase-card">
-            <div class="showcase-phone">
-              <div class="showcase-phone-frame">
-                <img src="./assets/screen-cards.jpg" alt="Cartes" loading="lazy" />
-              </div>
-            </div>
-            <div class="showcase-label">
-              <span class="showcase-number">03</span>
-              <h3>Collection</h3>
-              <p>Bronze, Argent, Or, Platine. Collectionne toutes les equipes.</p>
-            </div>
+            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-cards.jpg" alt="Cartes" /></div></div>
+            <div class="showcase-label"><span class="showcase-number">03</span><h3>Collection</h3><p>Bronze, Argent, Or, Platine. Collectionne toutes les équipes.</p></div>
           </div>
           <div class="showcase-card">
-            <div class="showcase-phone">
-              <div class="showcase-phone-frame">
-                <img src="./assets/screen-league.jpg" alt="Ligues" loading="lazy" />
-              </div>
-            </div>
-            <div class="showcase-label">
-              <span class="showcase-number">04</span>
-              <h3>Ligues</h3>
-              <p>Grimpe les rangs et deviens le meilleur pronostiqueur.</p>
-            </div>
+            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-league.jpg" alt="Ligues" /></div></div>
+            <div class="showcase-label"><span class="showcase-number">04</span><h3>Ligues</h3><p>Grimpe les rangs et deviens le meilleur pronostiqueur.</p></div>
           </div>
           <div class="showcase-card">
-            <div class="showcase-phone">
-              <div class="showcase-phone-frame">
-                <img src="./assets/screen-shop.jpg" alt="Boutique" loading="lazy" />
-              </div>
-            </div>
-            <div class="showcase-label">
-              <span class="showcase-number">05</span>
-              <h3>Boutique</h3>
-              <p>Packs quotidiens gratuits et packs premium a debloquer.</p>
-            </div>
+            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-shop.jpg" alt="Boutique" /></div></div>
+            <div class="showcase-label"><span class="showcase-number">05</span><h3>Boutique</h3><p>Packs quotidiens gratuits et packs premium à débloquer.</p></div>
           </div>
           <div class="showcase-card">
-            <div class="showcase-phone">
-              <div class="showcase-phone-frame">
-                <img src="./assets/screen-profile.jpg" alt="Profil" loading="lazy" />
-              </div>
-            </div>
-            <div class="showcase-label">
-              <span class="showcase-number">06</span>
-              <h3>Profil & Stats</h3>
-              <p>Tes statistiques, ton winrate et ta progression complete.</p>
-            </div>
+            <div class="showcase-phone"><div class="showcase-phone-frame"><img src="./assets/screen-profile.jpg" alt="Profil" /></div></div>
+            <div class="showcase-label"><span class="showcase-number">06</span><h3>Profil &amp; Stats</h3><p>Tes statistiques, ton winrate et ta progression complète.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ STATS ═══════════════════════════════════════ -->
+    <!-- ══════════ STATS ══════════ -->
     <section class="relative py-20 md:py-28 border-y border-white/5">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          <div class="stat-item reveal">
-            <span class="stat-number font-display" data-count="5">0</span>
-            <span class="stat-suffix font-display">+</span>
-            <p class="stat-label">Jeux supportes</p>
+          <div class="stat-item">
+            <span class="stat-number font-display" data-count="5">5</span><span class="stat-suffix font-display">+</span>
+            <p class="stat-label">Jeux supportés</p>
           </div>
-          <div class="stat-item reveal">
-            <span class="stat-number font-display" data-count="100">0</span>
-            <span class="stat-suffix font-display">%</span>
-            <p class="stat-label">Gratuit, sans argent reel</p>
+          <div class="stat-item">
+            <span class="stat-number font-display" data-count="100">100</span><span class="stat-suffix font-display">%</span>
+            <p class="stat-label">Gratuit, sans argent réel</p>
           </div>
-          <div class="stat-item reveal">
-            <span class="stat-number font-display" data-count="419">0</span>
-            <span class="stat-suffix font-display">+</span>
-            <p class="stat-label">Cartes a collectionner</p>
+          <div class="stat-item">
+            <span class="stat-number font-display" data-count="419">419</span><span class="stat-suffix font-display">+</span>
+            <p class="stat-label">Cartes à collectionner</p>
           </div>
-          <div class="stat-item reveal">
-            <span class="stat-number font-display" data-count="6">0</span>
-            <span class="stat-suffix font-display"></span>
-            <p class="stat-label">Ligues a gravir</p>
+          <div class="stat-item">
+            <span class="stat-number font-display" data-count="6">6</span><span class="stat-suffix font-display"></span>
+            <p class="stat-label">Ligues à gravir</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ FAQ ═══════════════════════════════════════ -->
+    <!-- ══════════ FAQ ══════════ -->
     <section id="faq" class="relative py-24 md:py-32">
       <div class="mx-auto max-w-3xl px-6 lg:px-8">
         <div class="text-center mb-16">
-          <p class="section-tag reveal">FAQ</p>
-          <h2 class="section-title reveal font-display font-bold">
-            Questions<br/><span class="text-gradient">frequentes</span>
-          </h2>
+          <p class="section-tag">FAQ</p>
+          <h2 class="section-title font-display font-bold">Questions<br/><span class="text-gradient">fréquentes</span></h2>
         </div>
-
         <div class="faq-list">
-          <details class="faq-item reveal">
-            <summary class="faq-question">
-              <span>L'app utilise-t-elle de l'argent reel ?</span>
-              <div class="faq-icon"><span></span><span></span></div>
-            </summary>
-            <div class="faq-answer">
-              <p>Non. RankRush est un terrain d'entrainement 100% gratuit base sur des credits virtuels. Tu ne depenses jamais d'argent reel.</p>
-            </div>
+          <details class="faq-item">
+            <summary class="faq-question"><span>L'app utilise-t-elle de l'argent réel ?</span><div class="faq-icon"><span></span><span></span></div></summary>
+            <div class="faq-answer"><p>Non. RankRush est un terrain d'entraînement 100&nbsp;% gratuit basé sur des crédits virtuels. Tu ne dépenses jamais d'argent réel.</p></div>
           </details>
-          <details class="faq-item reveal">
-            <summary class="faq-question">
-              <span>Sur quels jeux puis-je parier ?</span>
-              <div class="faq-icon"><span></span><span></span></div>
-            </summary>
-            <div class="faq-answer">
-              <p>Valorant, League of Legends, Counter-Strike, Call of Duty, Rocket League et plus a venir. L'app se concentre sur les ligues competitives majeures.</p>
-            </div>
+          <details class="faq-item">
+            <summary class="faq-question"><span>Sur quels jeux puis-je parier ?</span><div class="faq-icon"><span></span><span></span></div></summary>
+            <div class="faq-answer"><p>Valorant, League of Legends, Counter-Strike, Call of Duty, Rocket League et plus à venir. L'app se concentre sur les ligues compétitives majeures.</p></div>
           </details>
-          <details class="faq-item reveal">
-            <summary class="faq-question">
-              <span>Comment fonctionnent les cartes boost ?</span>
-              <div class="faq-icon"><span></span><span></span></div>
-            </summary>
-            <div class="faq-answer">
-              <p>Les cartes boost augmentent tes gains potentiels sur un pari. Tu peux les obtenir dans la boutique via les packs ou en reward quotidien. Chaque carte a un pourcentage de bonus different.</p>
-            </div>
+          <details class="faq-item">
+            <summary class="faq-question"><span>Comment fonctionnent les cartes boost ?</span><div class="faq-icon"><span></span><span></span></div></summary>
+            <div class="faq-answer"><p>Les cartes boost augmentent tes gains potentiels sur un pari. Tu peux les obtenir dans la boutique via les packs ou en récompense quotidienne. Chaque carte a un pourcentage de bonus différent.</p></div>
           </details>
-          <details class="faq-item reveal">
-            <summary class="faq-question">
-              <span>Comment monter dans les ligues ?</span>
-              <div class="faq-icon"><span></span><span></span></div>
-            </summary>
-            <div class="faq-answer">
-              <p>Chaque pari gagnant te rapporte des RP (Rank Points). Accumule suffisamment de RP pour passer au rang superieur, de Fer jusqu'a Maitre.</p>
-            </div>
+          <details class="faq-item">
+            <summary class="faq-question"><span>Comment monter dans les ligues ?</span><div class="faq-icon"><span></span><span></span></div></summary>
+            <div class="faq-answer"><p>Chaque pari gagnant te rapporte des RP (Rank Points). Accumule suffisamment de RP pour passer au rang supérieur, de Fer jusqu'à Maître.</p></div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ CTA / DOWNLOAD ═══════════════════════════════════════ -->
+    <!-- ══════════ CTA / DOWNLOAD ══════════ -->
     <section id="download" class="relative py-24 md:py-32 overflow-hidden">
       <div class="cta-bg"></div>
       <div class="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 text-center">
-        <h2 class="reveal font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-tight">
-          Pret a entrer dans<br/><span class="text-gradient">l'arene ?</span>
+        <h2 class="font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-tight">
+          Prêt à entrer dans<br/><span class="text-gradient">l'arène ?</span>
         </h2>
-        <p class="reveal mt-6 text-lg md:text-xl text-white/50 max-w-2xl mx-auto">
-          Telecharge RankRush gratuitement et commence a parier sur tes equipes favorites des maintenant.
+        <p class="mt-6 text-lg md:text-xl text-white/50 max-w-2xl mx-auto">
+          Télécharge RankRush gratuitement et commence à parier sur tes équipes favorites dès maintenant.
         </p>
-        <div class="reveal mt-10 flex flex-wrap justify-center gap-4">
-          <a href="#" class="btn-glow btn-glow--large">
+        <div class="mt-10 flex flex-wrap justify-center gap-4">
+          <a href="#" class="btn-glow btn-glow--lg">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            <span>Telecharger sur l'App Store</span>
+            <span>Télécharger sur l'App Store</span>
           </a>
-          <a href="#" class="btn-outline btn-outline--large">
-            <span>Rejoindre la beta TestFlight</span>
-          </a>
+          <a href="#" class="btn-outline btn-outline--lg"><span>Rejoindre la bêta TestFlight</span></a>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
+    <!-- ══════════ CONTACT ══════════ -->
     <section id="contact" class="relative py-20">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="contact-card reveal">
+        <div class="contact-card">
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 class="font-display font-bold text-2xl md:text-3xl">Une question ?</h3>
-              <p class="mt-3 text-white/50">Une idee de feature, un partenariat ou juste envie de discuter. Ecris-nous.</p>
+              <p class="mt-3 text-white/50">Une idée de feature, un partenariat ou juste envie de discuter. Écris-nous.</p>
             </div>
             <div class="flex md:justify-end">
               <a href="mailto:mth0024@proton.me?subject=RankRush%20-%20Contact" class="btn-glow">
@@ -458,7 +352,7 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+    <!-- ══════════ FOOTER ══════════ -->
     <footer class="border-t border-white/5 py-12">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="grid md:grid-cols-3 gap-8 items-center">
@@ -466,9 +360,7 @@
             <img src="./assets/logo.png" class="h-8 w-8 object-contain rounded-lg" alt="RankRush" />
             <span class="font-display font-semibold text-white/80">RankRush</span>
           </div>
-          <p class="text-center text-sm text-white/30">
-            &copy; <span id="year"></span> RankRush. eSport, no gamble.
-          </p>
+          <p class="text-center text-sm text-white/30">&copy; <span id="year"></span> RankRush. eSport, no gamble.</p>
           <div class="flex items-center justify-end gap-6">
             <a href="#" class="footer-link">Twitter/X</a>
             <a href="#" class="footer-link">Discord</a>

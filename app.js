@@ -268,8 +268,82 @@
     });
   }
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape') { closeModal(); closeContactModal(); }
   });
+
+  // ─── MODAL CONTACT ───
+  var contactModal = document.getElementById('contact-modal');
+  var contactModalClose = document.getElementById('contact-modal-close');
+  var contactOpenBtns = document.querySelectorAll('.btn-open-contact');
+  var contactForm = document.getElementById('contact-form');
+  var contactStatus = document.getElementById('contact-status');
+  var contactSubmit = document.getElementById('contact-submit');
+
+  function openContactModal() {
+    if (contactModal) {
+      contactModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  function closeContactModal() {
+    if (contactModal) {
+      contactModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  contactOpenBtns.forEach(function (btn) {
+    btn.addEventListener('click', openContactModal);
+  });
+  if (contactModalClose) contactModalClose.addEventListener('click', closeContactModal);
+  if (contactModal) {
+    contactModal.addEventListener('click', function (e) {
+      if (e.target === contactModal) closeContactModal();
+    });
+  }
+
+  // Contact form submission
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      contactStatus.textContent = '';
+      contactStatus.className = 'contact-status';
+      contactSubmit.disabled = true;
+      contactSubmit.querySelector('span').textContent = 'Envoi...';
+
+      var data = {
+        name: document.getElementById('contact-name').value.trim(),
+        email: document.getElementById('contact-email').value.trim(),
+        message: document.getElementById('contact-message').value.trim()
+      };
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function (res) { return res.json().then(function (body) { return { ok: res.ok, body: body }; }); })
+      .then(function (result) {
+        if (result.ok) {
+          contactStatus.textContent = 'Message envoyé avec succès !';
+          contactStatus.className = 'contact-status success';
+          contactForm.reset();
+          setTimeout(closeContactModal, 2500);
+        } else {
+          contactStatus.textContent = result.body.error || 'Une erreur est survenue.';
+          contactStatus.className = 'contact-status error';
+        }
+      })
+      .catch(function () {
+        contactStatus.textContent = 'Erreur réseau. Réessaie plus tard.';
+        contactStatus.className = 'contact-status error';
+      })
+      .finally(function () {
+        contactSubmit.disabled = false;
+        contactSubmit.querySelector('span').textContent = 'Envoyer';
+      });
+    });
+  }
 
   // Copy source URL
   if (copyBtn) {

@@ -204,12 +204,11 @@
 
   if (galleryTabs.length > 0) {
     startGalleryAutoplay();
-    // Pause on user interaction, resume after 10s
+    // Stop autoplay permanently on user interaction
     var gallerySection = document.getElementById('gallery-tabs');
     if (gallerySection) {
       gallerySection.addEventListener('click', function () {
         stopGalleryAutoplay();
-        setTimeout(startGalleryAutoplay, 10000);
       });
     }
   }

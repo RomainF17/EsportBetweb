@@ -191,15 +191,24 @@
   });
 
   // Auto-cycle gallery every 5s
-  var galleryAutoplay;
+  var galleryAutoplay = null;
+  var galleryStopped = false;
+
   function startGalleryAutoplay() {
+    if (galleryStopped) return;
+    if (galleryAutoplay) clearInterval(galleryAutoplay);
     galleryAutoplay = setInterval(function () {
       var next = (galleryActiveIndex + 1) % galleryData.length;
       switchGallery(next);
     }, 5000);
   }
+
   function stopGalleryAutoplay() {
-    clearInterval(galleryAutoplay);
+    galleryStopped = true;
+    if (galleryAutoplay) {
+      clearInterval(galleryAutoplay);
+      galleryAutoplay = null;
+    }
   }
 
   if (galleryTabs.length > 0) {
@@ -207,9 +216,7 @@
     // Stop autoplay permanently on user interaction
     var gallerySection = document.getElementById('gallery-tabs');
     if (gallerySection) {
-      gallerySection.addEventListener('click', function () {
-        stopGalleryAutoplay();
-      });
+      gallerySection.addEventListener('click', stopGalleryAutoplay);
     }
   }
 

@@ -190,35 +190,6 @@
     });
   });
 
-  // Auto-cycle gallery every 5s
-  var galleryAutoplay = null;
-  var galleryStopped = false;
-
-  function startGalleryAutoplay() {
-    if (galleryStopped) return;
-    if (galleryAutoplay) clearInterval(galleryAutoplay);
-    galleryAutoplay = setInterval(function () {
-      var next = (galleryActiveIndex + 1) % galleryData.length;
-      switchGallery(next);
-    }, 5000);
-  }
-
-  function stopGalleryAutoplay() {
-    galleryStopped = true;
-    if (galleryAutoplay) {
-      clearInterval(galleryAutoplay);
-      galleryAutoplay = null;
-    }
-  }
-
-  if (galleryTabs.length > 0) {
-    startGalleryAutoplay();
-    // Stop autoplay permanently on user interaction
-    var gallerySection = document.getElementById('gallery-tabs');
-    if (gallerySection) {
-      gallerySection.addEventListener('click', stopGalleryAutoplay);
-    }
-  }
 
   // ─── STAT COUNTER ───
   document.querySelectorAll('.stat-number').forEach(function (el) {

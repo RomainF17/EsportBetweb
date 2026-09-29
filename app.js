@@ -143,7 +143,7 @@
 
   // ─── GALLERY TAB SWITCHING ───
   var galleryData = [
-    { title: 'Matchs en direct', desc: 'Tous les matchs eSport en un coup d\'œil. Filtre par jeu, par statut et place tes paris en quelques secondes.' },
+    { title: 'Tous les matchs', desc: 'Tous les matchs eSport en un coup d\'œil. Filtre par jeu, par statut et place tes paris en quelques secondes.' },
     { title: 'Validation de pari', desc: 'Choisis ta mise, active tes cartes boost pour maximiser tes gains et valide ton pronostic.' },
     { title: 'Collection de cartes', desc: 'Plus de 419 cartes d\'équipes eSport à collectionner. Bronze, Argent, Or et Holographique.' },
     { title: 'Ligues & Classement', desc: 'Du rang Fer à Grand Maître, grimpe les ligues et domine le classement hebdomadaire.' },
